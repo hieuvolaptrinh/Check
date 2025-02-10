@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import StudentTable from "./components/StudentTable";
 
 function App() {
-  const students = [
+  const [students, setStudent] = useState([
     {
       studentId: "1",
       studentLastName: "nguyen thi",
@@ -23,15 +24,15 @@ function App() {
       studentLastName: "nguyen thi",
       studentFirstName: "nu",
     },
-  ];
+  ]);
+
   const addStudent = () => {
     const newStudent = {
       studentId: "5",
       studentLastName: "Sinh viên test",
       studentFirstName: "Sinh viên test",
     };
-    students.push(newStudent);
-    console.log(students);
+    setStudent([...students, newStudent]);
   };
   return (
     <>
