@@ -40,5 +40,6 @@ StudentTable.propTypes = {
       studentFirstName: PropTypes.string.isRequired,
     })
   ).isRequired,
+  deleteStudent: PropTypes.func.isRequired,
 };
 export default StudentTable;
