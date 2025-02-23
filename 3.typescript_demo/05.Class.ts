@@ -1,11 +1,11 @@
 class Student {
   // properties
-  private studentId: number;
-  private lastName: string;
-  private firstName: string;
-  private grade: number;
+  private _studentId: number;
+  private _lastName: string;
+  private _firstName: string;
+  private _grade: number;
 
-  isEnrolled: boolean;
+  _isEnrolled: boolean;
   // contructor
 
   constructor(
@@ -15,36 +15,35 @@ class Student {
     grade: number,
     isEnrolled: boolean
   ) {
-    this.studentId = studentId;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.grade = grade;
-    this.isEnrolled = isEnrolled;
+    this._studentId = studentId;
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._grade = grade;
+    this._isEnrolled = isEnrolled;
   }
   // getter/setter
   public getInfor(): string {
-    return `Id : ${this.studentId},
-      Name ${this.firstName} ${this.lastName},
-      Grade : ${this.grade},
-      Enrolled :${this.isEnrolled ? "Yes" : "No"}`;
+    return `Id : ${this._studentId},
+      Name ${this._firstName} ${this._lastName},
+      Grade : ${this._grade},
+      Enrolled :${this._isEnrolled ? "Yes" : "No"}`;
   }
 
   // mặt định nó là public
   public getStudenId(): number {
-    return this.studentId;
+    return this._studentId;
   }
 
   public setStudentId(newStudentId: number) {
     if (newStudentId > 0) {
-      this.studentId = newStudentId;
+      this._studentId = newStudentId;
     } else {
       console.log("Student Id must be greater than 0");
     }
   }
 
   // cách viết nhanh theo kiểu mới
-  // accessor get và set
-  
+  // accessor get và set, tên thuộc tính (properties sử dụng dấu _)
 }
 
 //
