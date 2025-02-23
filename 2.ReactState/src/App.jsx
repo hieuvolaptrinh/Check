@@ -25,6 +25,7 @@ function App() {
       studentFirstName: "nu",
     },
   ]);
+  const [showForm, setShowForm] = useState(false);
 
   const addStudent = (firstName, lastName) => {
     const newStudent = {
@@ -50,7 +51,14 @@ function App() {
           <h1 className="card-header">Danh Sách Sinh Viên</h1>
           <div className="card-body">
             <StudentTable students={students} deleteStudent={deleteStudent} />
-            <NewStudentForm addStudent={addStudent} />
+            <button
+              className="btn btn-primary"
+              onClick={() => setShowForm(!showForm)}
+            >
+              {showForm ? " Đóng" : "Mở"}
+            </button>
+
+            {showForm && <NewStudentForm addStudent={addStudent} />}
           </div>
         </div>
       </div>
