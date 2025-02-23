@@ -8,6 +8,7 @@ function StudentTable(props) {
           <th scope="col">Mã Sinh Viên</th>
           <th scope="col">Họ Đệm</th>
           <th scope="col">Tên</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,7 @@ function StudentTable(props) {
             studentId={student.studentId}
             studentLastName={student.studentLastName}
             studentFirstName={student.studentFirstName}
+            deleteStudent={props.deleteStudent}
           />
         ))}
         {/* <StudentItem
