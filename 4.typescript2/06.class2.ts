@@ -40,6 +40,14 @@ class Student {
   public set grade(value: number) {
     this._grade = value;
   }
+  public getInfor(): string {
+    return `Id : ${this._studentId},
+      Name ${this._firstName} ${this._lastName},
+      Grade : ${this._grade},
+      Enrolled :${this._isEnrolled ? "Yes" : "No"}`;
+  }
 }
 
 const student1 = new Student(1, "nguyễn", "văn a", 10, true);
+
+export default Student;
