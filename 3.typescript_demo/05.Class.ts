@@ -4,7 +4,6 @@ class Student {
   private _lastName: string;
   private _firstName: string;
   private _grade: number;
-
   _isEnrolled: boolean;
   // contructor
 
@@ -43,7 +42,35 @@ class Student {
   }
 
   // cách viết nhanh theo kiểu mới
-  // accessor get và set, tên thuộc tính (properties sử dụng dấu _)
+  // accessor get và set, tên thuộc tính (properties sử dụng dấu _) để tránh trùng với tên hàm
+
+  public get studentId(): number {
+    return this._studentId;
+  }
+
+  public get lastName(): string {
+    return this._lastName;
+  }
+
+  public get firstName(): string {
+    return this._firstName;
+  }
+
+  public get grade(): number {
+    return this._grade;
+  }
+
+  public set lastName(value: string) {
+    this._lastName = value;
+  }
+
+  public set firstName(value: string) {
+    this._firstName = value;
+  }
+
+  public set grade(value: number) {
+    this._grade = value;
+  }
 }
 
 //
@@ -57,3 +84,10 @@ student1.setStudentId(9);
 console.log(student1.getStudenId());
 student1.setStudentId(-6);
 console.log(student1.getStudenId());
+
+// sử dụng accesssor
+const student2 = new Student(2, "test ", "test", 9, true);
+
+console.log(student2.getInfor());
+student2.firstName = "Hiếu"; // thực chất ở đây là nó sẽ gọi phương thức set
+console.log(student2.getInfor());
